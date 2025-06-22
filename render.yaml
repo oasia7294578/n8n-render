@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: n8n-app
+    env: node
+    region: frankfurt  # Plus proche de la France
+    plan: free
+    buildCommand: npm install --production
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_PORT
+        value: 10000
+      - key: N8N_PROTOCOL
+        value: https
+      - key: DB_TYPE
+        value: sqlite
+      - key: N8N_USER_FOLDER
+        value: /tmp/.n8n
+      - key: N8N_DISABLE_UI
+        value: false
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: false
+      - key: EXECUTIONS_DATA_PRUNE
+        value: true
+      - key: EXECUTIONS_DATA_MAX_AGE
+        value: 336  # 14 jours
+    # Auto-déploiement depuis GitHub
+    autoDeploy: true
