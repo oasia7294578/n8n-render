@@ -1,0 +1,21 @@
+
+{
+  "name": "n8n-render-deployment",
+  "version": "1.0.0",
+  "description": "n8n workflow automation on Render.com",
+  "main": "server.js",
+  "scripts": {
+    "start": "n8n start",
+    "dev": "n8n start"
+  },
+  "dependencies": {
+    "n8n": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "keywords": ["n8n", "automation", "workflow"],
+  "author": "Votre nom",
+  "license": "MIT"
+}
